@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalThemeButton = document.getElementById('theme-original');
     const retroThemeButton = document.getElementById('theme-retro');
 
+    // Lightbox Elements
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const bunnyImageLinks = document.querySelectorAll('.bunny-card a');
+
+
     // Function to set a theme
     const setTheme = (theme) => {
         // Construct the new stylesheet path
@@ -32,4 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         setTheme('original'); // Default theme
     }
+
+    // Lightbox functionality
+    bunnyImageLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent opening image in new tab
+            lightboxImage.src = link.href; // Set the image source
+            lightboxOverlay.style.display = 'flex'; // Show the lightbox
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none'; // Hide the lightbox
+    });
+
+    // Close lightbox when clicking outside the image
+    lightboxOverlay.addEventListener('click', (event) => {
+        if (event.target === lightboxOverlay) {
+            lightboxOverlay.style.display = 'none';
+        }
+    });
 });
