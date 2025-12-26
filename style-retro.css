@@ -114,12 +114,80 @@ blockquote {
 }
 
 .exophase-gamercard img {
+
     max-width: 100%;
+
     height: auto;
+
     border-radius: 8px;
+
     box-shadow: 0 0 15px #00f6ff;
+
     border: 2px solid #00f6ff;
+
 }
+
+
+
+.youtube-latest {
+
+    margin-top: 50px;
+
+    padding: 20px;
+
+    border: 2px solid #ff00ff; /* Neon Magenta */
+
+    border-radius: 8px;
+
+    background-color: rgba(13, 2, 33, 0.6);
+
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+
+}
+
+
+
+.video-container {
+
+    position: relative;
+
+    padding-bottom: 56.25%; /* 16:9 */
+
+    height: 0;
+
+    overflow: hidden;
+
+    max-width: 100%;
+
+    margin-top: 20px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 0 15px #00f6ff;
+
+    border: 2px solid #00f6ff;
+
+}
+
+
+
+.video-container iframe {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+
+
 
 /* Footer */
 footer {
