@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General Body Styles */
+body {
+    background-color: #0d0221; /* Dark purple/blue */
+    color: #f0f0f0;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    line-height: 1.8;
+    font-size: 14px; /* Pixel fonts can be large, so we set a base */
+}
+
+/* Scanline Overlay */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 1px, transparent 1px, transparent 3px);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Header and Banner */
+header {
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-bottom: 4px solid #ff00ff; /* Neon Magenta */
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff4757; /* Ruby Red */
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff4757, 0 0 20px #ff4757;
+    margin-top: -60px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00f6ff; /* Neon Cyan */
+    text-shadow: 0 0 5px #fff, 0 0 10px #00f6ff, 0 0 15px #00f6ff;
+    border-bottom: 2px solid #00f6ff;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* All sections for consistent spacing */
+.about, .tweets, .instagram, .exophase-gamercard {
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid #ff00ff; /* Neon Magenta */
+    border-radius: 8px;
+    background-color: rgba(13, 2, 33, 0.6); /* Semi-transparent background */
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
+}
+
+blockquote {
+    font-size: 1rem;
+    font-style: normal; /* Pixel fonts don't do italic well */
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 1.8;
+}
+
+/* Socials & Gamercard */
+.instagram, .exophase-gamercard {
+    text-align: center;
+}
+
+.instagram p, .exophase-gamercard p {
+    font-size: 1rem;
+    color: #f0f0f0;
+}
+
+.instagram-button {
+    display: inline-block;
+    background: #ff00ff; /* Solid Neon Magenta */
+    color: #f0f0f0;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 8px #ff00ff, inset 0 0 8px #fff;
+    border: 1px solid #fff;
+}
+
+.instagram-button:hover {
+    transform: scale(1.1);
+    background: #00f6ff; /* Neon Cyan on hover */
+    box-shadow: 0 0 15px #00f6ff, inset 0 0 8px #fff;
+}
+
+.exophase-gamercard img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00f6ff;
+    border: 2px solid #00f6ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    margin-bottom: 20px;
+}
+
+.theme-switcher button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px 15px;
+    border: 1px solid #ff00ff;
+    background-color: #0d0221;
+    color: #ff00ff;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #ff00ff;
+    transition: all 0.2s ease-in-out;
+}
+
+.theme-switcher button:hover {
+    background-color: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 10px #ff00ff;
+}
