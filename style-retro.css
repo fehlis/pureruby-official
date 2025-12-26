@@ -102,7 +102,7 @@ h2 {
 }
 
 /* All sections for consistent spacing */
-.about, .tweets, .exophase-gamercard, .bunnies, .youtube-latest {
+.about, .tweets, .exophase-gamercard, .gallery-section, .youtube-latest {
     margin-top: 50px;
     padding: 20px;
     border: 2px solid #ff00ff; /* Neon Magenta */
@@ -293,6 +293,38 @@ footer {
     box-shadow: 0 0 10px #ff00ff;
 }
 
+.lightbox-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #00f6ff; /* Neon Cyan */
+    border: 2px solid #00f6ff;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #00f6ff;
+    box-shadow: 0 0 8px #00f6ff;
+}
+
+#lightbox-prev {
+    left: 10px;
+}
+
+#lightbox-next {
+    right: 10px;
+}
+
+.lightbox-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ff00ff; /* Neon Magenta on hover */
+    border-color: #ff00ff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
 /* Lightbox styles */
 #lightbox-overlay {
     display: none; /* Hidden by default */
@@ -352,7 +384,7 @@ footer {
 }
 
 /* Bunny gallery thumbnails (retro theme) */
-.bunny-gallery {
+.gallery-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -360,7 +392,7 @@ footer {
     margin-top: 30px;
 }
 
-.bunny-card {
+.gallery-card {
     background-color: rgba(13, 2, 33, 0.8);
     border: 2px solid #00f6ff;
     border-radius: 8px;
@@ -370,7 +402,7 @@ footer {
     box-shadow: 0 0 10px #00f6ff;
 }
 
-.bunny-card img {
+.gallery-card img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -379,7 +411,7 @@ footer {
     border: 1px solid #00f6ff;
 }
 
-.bunny-card p {
+.gallery-card p {
     font-weight: bold;
     color: #f0f0f0;
 }
