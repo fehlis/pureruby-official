@@ -101,7 +101,7 @@ h2 {
 }
 
 /* All sections for consistent spacing */
-.about, .tweets, .instagram, .exophase-gamercard {
+.about, .tweets, .instagram, .exophase-gamercard, .bunnies, .youtube-latest {
     margin-top: 50px;
     padding: 20px;
     border: 2px solid #ff00ff; /* Neon Magenta */
@@ -166,21 +166,7 @@ blockquote {
 
 
 
-.youtube-latest {
 
-    margin-top: 50px;
-
-    padding: 20px;
-
-    border: 2px solid #ff00ff; /* Neon Magenta */
-
-    border-radius: 8px;
-
-    background-color: rgba(13, 2, 33, 0.6);
-
-    box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
-
-}
 
 
 
