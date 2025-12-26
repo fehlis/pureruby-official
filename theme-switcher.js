@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxPrev = document.getElementById('lightbox-prev');
     const lightboxNext = document.getElementById('lightbox-next');
 
-    // Select all gallery image links (now generalized)
-    const galleryImageLinks = document.querySelectorAll('.gallery-card a');
+    // Select all gallery image links and the about image link
+    const allImageLinks = document.querySelectorAll('.gallery-card a, .about-image-link');
 
     let currentGalleryImages = []; // Stores URLs of images in the current gallery
     let currentImageIndex = 0;    // Stores the index of the currently displayed image
@@ -63,21 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
         // Optionally update alt text here if alt texts were stored with image src
     };
 
-    // Lightbox functionality for generic galleries
-    galleryImageLinks.forEach(link => {
+    // Lightbox functionality for generic galleries and about image
+    allImageLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent opening image in new tab
 
-            // Get all image links from the *current* gallery
-            const parentGallery = link.closest('.gallery-section');
-            if (parentGallery) {
-                const imagesInThisGallery = Array.from(parentGallery.querySelectorAll('.gallery-card a'));
-                currentGalleryImages = imagesInThisGallery.map(imgLink => imgLink.href);
-                currentImageIndex = imagesInThisGallery.findIndex(imgLink => imgLink === link);
-            } else {
-                // Fallback if not within a .gallery-section (shouldn't happen with current HTML)
+            // Check if the clicked link is from the About Me section
+            if (link.classList.contains('about-image-link')) {
                 currentGalleryImages = [link.href];
                 currentImageIndex = 0;
+                // Hide nav buttons for single image
+                if (lightboxPrev) lightboxPrev.style.display = 'none';
+                if (lightboxNext) lightboxNext.style.display = 'none';
+            } else {
+                // Original logic for gallery sections
+                const parentGallery = link.closest('.gallery-section');
+                if (parentGallery) {
+                    const imagesInThisGallery = Array.from(parentGallery.querySelectorAll('.gallery-card a'));
+                    currentGalleryImages = imagesInThisGallery.map(imgLink => imgLink.href);
+                    currentImageIndex = imagesInThisGallery.findIndex(imgLink => imgLink === link);
+                    // Show nav buttons for galleries
+                    if (lightboxPrev) lightboxPrev.style.display = 'block'; // Assuming default display is block/inline-block
+                    if (lightboxNext) lightboxNext.style.display = 'block'; // Assuming default display is block/inline-block
+                } else {
+                    // Fallback
+                    currentGalleryImages = [link.href];
+                    currentImageIndex = 0;
+                    if (lightboxPrev) lightboxPrev.style.display = 'none';
+                    if (lightboxNext) lightboxNext.style.display = 'none';
+                }
             }
 
             showImage(currentImageIndex); // Show the clicked image
@@ -87,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightboxClose.addEventListener('click', () => {
         lightboxOverlay.style.display = 'none'; // Hide the lightbox
+        if (lightboxPrev) lightboxPrev.style.display = 'block'; // Reset nav buttons display
+        if (lightboxNext) lightboxNext.style.display = 'block'; // Reset nav buttons display
     });
 
     // Add click event listeners for previous/next buttons
@@ -108,6 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxOverlay.addEventListener('click', (event) => {
         if (event.target === lightboxOverlay) {
             lightboxOverlay.style.display = 'none';
+            if (lightboxPrev) lightboxPrev.style.display = 'block'; // Reset nav buttons display
+            if (lightboxNext) lightboxNext.style.display = 'block'; // Reset nav buttons display
         }
     });
 
@@ -119,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showImage(currentImageIndex + 1);
             } else if (event.key === 'Escape') {
                 lightboxOverlay.style.display = 'none';
+                if (lightboxPrev) lightboxPrev.style.display = 'block'; // Reset nav buttons display
+                if (lightboxNext) lightboxNext.style.display = 'block'; // Reset nav buttons display
             }
         }
     });

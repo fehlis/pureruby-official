@@ -114,6 +114,7 @@ h2 {
 /* Reduce top spacing specifically for About and Instagram */
 .about {
     margin-top: 10px;
+    overflow: hidden; /* To contain floated elements */
 }
 .instagram {
     margin-top: 40px;
@@ -124,26 +125,27 @@ h2 {
 }
 
 .about-image-container {
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: rgba(13, 2, 33, 0.8); /* Semi-transparent background */
-    border: 2px solid #ff00ff; /* Neon Magenta border */
-    border-radius: 8px;
-    box-shadow: 0 0 15px #ff00ff, inset 0 0 10px #ff00ff; /* Neon glow */
-    position: relative;
+    float: left;
+    margin: 0 20px 20px 0;
+    max-width: 50%; /* Limit width to allow text wrapping */
     overflow: hidden;
 }
 
 .about-image {
     max-width: 100%;
+    max-height: 250px;
     height: auto;
-    border-radius: 4px; /* Slightly sharper corners for retro */
+    object-fit: cover;
+    border-radius: 4px;
     display: block;
     margin: 0 auto;
-    filter: sepia(0.2) saturate(1.2) contrast(1.1) brightness(0.9); /* Retro photo effect */
-    border: 1px solid #00f6ff; /* Neon Cyan border */
-    box-shadow: 0 0 8px #00f6ff;
+    filter: sepia(0.2) saturate(1.2) contrast(1.1) brightness(0.9);
+    border: 2px solid #ff00ff; /* Neon Magenta border */
+    box-shadow: 0 0 10px #00f6ff, inset 0 0 5px #ff00ff; /* Neon glow shadow */
+    transition: transform 0.2s ease-in-out;
+}
+.about-image:hover {
+    transform: scale(1.1); /* Enlarge on hover */
 }
 
 .instagram h2 {
