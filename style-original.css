@@ -78,6 +78,26 @@ main {
     margin-top: 0px;
 }
 
+.about-image-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(to right, #2b2b2b, #3a3a3a); /* Subtle gradient background */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    position: relative;
+    overflow: hidden; /* To contain pseudo-elements if used for more effects */
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image within its container */
+    filter: brightness(0.95); /* Slightly dim the image for better integration */
+}
+
 .instagram h2 {
     margin-top: 0px;
 }

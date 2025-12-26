@@ -123,6 +123,29 @@ h2 {
     margin-top: 0px;
 }
 
+.about-image-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(13, 2, 33, 0.8); /* Semi-transparent background */
+    border: 2px solid #ff00ff; /* Neon Magenta border */
+    border-radius: 8px;
+    box-shadow: 0 0 15px #ff00ff, inset 0 0 10px #ff00ff; /* Neon glow */
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Slightly sharper corners for retro */
+    display: block;
+    margin: 0 auto;
+    filter: sepia(0.2) saturate(1.2) contrast(1.1) brightness(0.9); /* Retro photo effect */
+    border: 1px solid #00f6ff; /* Neon Cyan border */
+    box-shadow: 0 0 8px #00f6ff;
+}
+
 .instagram h2 {
     margin-top: 0px;
 }
