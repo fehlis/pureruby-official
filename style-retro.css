@@ -97,11 +97,12 @@ h2 {
     border-bottom: 2px solid #00f6ff;
     padding-bottom: 15px;
     margin-bottom: 25px;
+    margin-top: 0px;
     letter-spacing: 1px;
 }
 
 /* All sections for consistent spacing */
-.about, .tweets, .instagram, .exophase-gamercard, .bunnies, .youtube-latest {
+.about, .tweets, .exophase-gamercard, .bunnies, .youtube-latest {
     margin-top: 50px;
     padding: 20px;
     border: 2px solid #ff00ff; /* Neon Magenta */
@@ -109,6 +110,24 @@ h2 {
     background-color: rgba(13, 2, 33, 0.6); /* Semi-transparent background */
     box-shadow: 0 0 10px #ff00ff, inset 0 0 10px #ff00ff;
 }
+
+/* Reduce top spacing specifically for About and Instagram */
+.about {
+    margin-top: 10px;
+}
+.instagram {
+    margin-top: 10px;
+}
+
+.about h2 {
+    margin-top: 0px;
+}
+
+.instagram h2 {
+    margin-top: 0px;
+}
+
+
 
 blockquote {
     font-size: 1rem;
@@ -123,6 +142,11 @@ blockquote {
 /* Socials & Gamercard */
 .instagram, .exophase-gamercard {
     text-align: center;
+}
+
+/* Left-align the Exophase heading in retro theme while keeping content centered */
+.exophase-gamercard h2 {
+    text-align: left;
 }
 
 .instagram p, .exophase-gamercard p {
