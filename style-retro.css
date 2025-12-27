@@ -52,6 +52,9 @@ nav {
     border-bottom: 2px solid #ff00ff; /* Neon Magenta */
     text-align: center;
     box-shadow: 0 0 10px #ff00ff;
+    position: sticky; /* Make navigation sticky */
+    top: 0;          /* Stick to the top of the viewport */
+    z-index: 100;    /* Ensure it stays above other content */
 }
 
 nav ul {
